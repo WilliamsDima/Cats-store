@@ -1,0 +1,73 @@
+.container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 4rem 13rem;
+    background-color: $white;
+
+    .container-wrapp {
+        width: 100%;
+
+        @media (max-width: $table-madia) {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+    }
+
+    @media (max-width: $table-madia) {
+        padding: 4rem 9rem;
+    }
+
+    .btn-scroll-block {
+        position: absolute;
+        bottom: 0;
+        right:0;
+        display: none;
+
+        @media (max-width: $table-madia) {
+            position: fixed;
+            bottom: 2rem;
+            right:2rem;
+        }
+    
+        .btn-scroll-top {
+            position: relative;
+            display: block;
+            width: 59px;
+            height: 59px;
+            background: #6EBBD3;
+            cursor: pointer;
+            transition: all .2s linear;
+        
+            &:after {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                content: '';
+                transform: translate(-50%) rotate(135deg);
+                transition: all .2s linear;
+
+                width: 10px;
+                height: 10px;
+                border-bottom: 2px solid #fff;
+                border-left: 2px solid #fff;
+            }
+
+            &:hover {
+                &:after {
+                    transform: translate(-50%) rotate(495deg);
+                }
+            }
+        
+        }
+
+        &.active {
+            display: block;
+        }
+    }
+}
+

@@ -1,0 +1,216 @@
+.header {
+    max-width: 100%;
+    position: relative;
+    background: url('../images/header-bg.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: 3;
+    color: $white;
+    padding: 4rem 13rem;
+    padding-top: 5rem;
+
+    @media (max-width: $table-madia) {
+        padding: 2.8rem 23rem;
+    }
+
+    @media (max-width: $mobile-madia) {
+        padding: 1rem 5rem;
+    }
+
+    .burger-nav {
+        display: none;
+        width: 50px;
+        height: 50px;
+        border-radius: 5px;
+        border: none;
+        background-color: transparent;
+
+        @media (max-width: $table-madia) {
+            position: fixed;
+            top: 0;
+            right: 2rem;
+            z-index: 5;
+            display: block;
+        }
+
+        &.active {
+            span {
+                display: none;
+            }
+
+            &:after {
+                top: 50%;
+                transform: rotate(-45deg) translateY(-50%);
+            }
+
+            &:before {
+                bottom: 47%;
+                transform: rotate(45deg) translateY(-50%);
+            }
+        }
+
+        span {
+            display: block;
+            position: absolute;
+            top: 50%;
+            right: 0%;
+            width: 50px;
+            height: 2px;
+            background-color: red;
+        }
+
+            &:after, &:before {
+                display: block;
+                position: absolute;
+                right: 0;
+                content: '';
+                width: 100%;
+                height: 2px;
+                z-index: 5;
+                background-color: red;
+                transition: all .2s linear;
+            }
+
+            &:after {
+                top: 25%;
+            }
+
+            &:before {
+                bottom: 25%;
+            }
+    }
+    
+    &:after {
+        position: absolute;
+        content: '';
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 3;
+        background: rgba(31, 32, 33, 0.79);
+    }
+    
+    .top-header {
+        position: relative;
+        z-index: 4;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+
+    }
+    
+    .result-search-text {
+        position: relative;
+        z-index: 4;
+        font-size: 4.8rem;
+        margin-top: 3.6rem;
+
+        @media (max-width: $table-madia) {
+            font-size: 3rem;
+        }
+
+        @media (max-width: $table-madia) {
+            font-size: 2rem;
+            margin-top: 1rem;
+        }
+    }
+}
+
+.nav {
+    font-size: $fz-nav-header;
+    line-height: 2;
+    font-weight: 400;
+
+
+    ul {
+        display: flex;
+
+        
+        @media (max-width: $table-madia) {
+            display: block;
+        }
+
+        
+        li {
+            margin-right: 10rem;
+
+            @media (max-width: $table-madia) {
+                margin-right: 6rem;
+            }
+           
+            a {
+                position: relative;
+                color: $white;
+                text-decoration: none;
+                cursor: pointer;
+                
+                &:hover:after {
+                     width: 100%;
+                }
+                
+                &:after {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    content: '';
+                    z-index: 2;
+                    width: 0%;
+                    height: 1px;
+                    background-color: $white;
+                    transition: width .2s linear; 
+                }
+            }
+        }
+    }   
+
+    @media (max-width: $table-madia) {
+        transform: translateX(100%);
+        transition: all .2s linear;
+        position: fixed;
+        right: 0;
+        top: 5rem;
+        display: block;
+        background-color: #fff;
+        padding: 1rem;
+        border-radius: 5px;
+    }
+
+    
+    &.active {
+        transform: translateX(0%);
+        ul {
+            a {
+                color: $black;
+            }
+        }
+    }
+}
+
+.phone {
+    p {
+        font-size: 2.4rem;
+        font-weight: 700;
+        
+        &:last-child {
+            font-size: $fz-nav-header;
+            font-weight: 400;
+            margin-top: 3px;
+            text-align: right;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,19 @@
+.page {
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    overflow: hidden;
+
+    .wrapper {
+        min-width: 1280px;
+        background-color: #fff;
+
+        @media (max-width: $table-madia) {
+            min-width: $table-madia;
+        }
+
+        @media (max-width: $mobile-madia) {
+            min-width: $mobile-madia;
+        }
+    }
+}

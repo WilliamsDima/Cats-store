@@ -1,0 +1,24 @@
+@import "vars";
+@import "../vendor/reset.scss";
+
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background-color: #E5E5E5;
+    font-family: Montserrat;
+    font-style: normal;
+    color: $black;
+    font-size: 1.4rem;
+}
+
+
+@import "blocks/page.scss";
+@import "blocks/header.scss";
+@import "blocks/container.scss";
+@import "blocks/sorting.scss";
+@import "blocks/offers.scss";
+@import "blocks/btn-block.scss";
+@import "blocks/footer.scss";
